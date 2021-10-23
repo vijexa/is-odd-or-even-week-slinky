@@ -4,7 +4,6 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSExportTopLevel, JSImport}
 import scala.scalajs.LinkingInfo
 
-import slinky.core._
 import slinky.web.ReactDOM
 import slinky.hot
 
@@ -31,5 +30,6 @@ object Main {
     }
 
     ReactDOM.render(App(), container)
+    ()
   }
 }

@@ -6,7 +6,6 @@ import slinky.web.html._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
-import scalacss.DevDefaults._
 
 @JSImport("resources/App.css", JSImport.Default)
 @js.native
@@ -30,7 +29,9 @@ object ReactLogo extends js.Object
       p(className := "App-intro")(
         "Please select date when you started studying below ",
       ),
-      DateHandler(),
+      DateHandler(()),
+      br(),
+      BirthdayHandler(()),
       div(className := "footer")(
         """Made for my lovely girlfriend because I had nothing better to do
           and wanted to check out ScalaJS and all that stuff""",

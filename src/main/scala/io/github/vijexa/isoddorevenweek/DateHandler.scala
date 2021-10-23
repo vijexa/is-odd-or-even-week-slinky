@@ -1,42 +1,17 @@
 package io.github.vijexa.isoddorevenweek
 
-import slinky.core.annotations.react
-import slinky.web.html._
+import io.github.vijexa.isoddorevenweek.Util._
+import scalacss.DevDefaults._
 import slinky.core.FunctionalComponent
+import slinky.core.annotations.react
 import slinky.core.facade.Fragment
 import slinky.core.facade.Hooks._
+import slinky.web.html._
+import typings.reactDatePicker.components.ReactDatePicker
 
-import scalacss.DevDefaults._
-import eu.timepit.refined._
-import eu.timepit.refined.api.Refined
-import eu.timepit.refined.auto._
-import eu.timepit.refined.numeric._
-import eu.timepit.refined.collection._
-import eu.timepit.refined._
-import eu.timepit.refined.auto._
-import eu.timepit.refined.numeric._
-import eu.timepit.refined.api.{RefType, Refined}
-import eu.timepit.refined.boolean._
-import eu.timepit.refined.char._
-import eu.timepit.refined.collection._
-import eu.timepit.refined.generic._
-import eu.timepit.refined.string._
-import shapeless.{::, HNil}
-import scala.scalajs.js.annotation._
-import scala.scalajs.js
-import slinky.core.ExternalComponent
-import slinky.core.ReactComponentClass
-import java.util.Date
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
-import java.time.Instant
-import java.time.ZoneOffset
-import java.time.ZoneId
-import java.time.LocalDateTime
-import java.time.DayOfWeek
-
-import io.github.vijexa.isoddorevenweek.Util._
-import typings.reactDatePicker.components.ReactDatePicker
+import scala.scalajs.js
 
 object DateHandlerStyles extends StyleSheet.Inline {
   import dsl._
@@ -61,7 +36,7 @@ object DateHandlerStyles extends StyleSheet.Inline {
   import DateHandlerStyles._
 
   def getMondayDate(date: LocalDate): LocalDate =
-    date.minusDays(date.getDayOfWeek.getValue - 1)
+    date.minusDays(date.getDayOfWeek.getValue - 1L)
 
   def countWeeks(startingDate: LocalDate, today: LocalDate): Int =
     ChronoUnit.WEEKS.between(getMondayDate(startingDate), getMondayDate(today)).toInt + 1
